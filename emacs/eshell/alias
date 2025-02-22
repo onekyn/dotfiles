@@ -1,0 +1,2 @@
+alias clear eshell/clear-scrollback
+alias emacs find-file $1
