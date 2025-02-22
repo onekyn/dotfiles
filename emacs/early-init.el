@@ -1,3 +1,9 @@
+;;; -*- lexical-binding: t; -*-
+
+;; Emacs runs this file before `init.el'.
+;; Use it for things you want to be configured before
+;; proper package and UI initialization happens.
+
 ;; Prevent garbage collection during startup
 (setq kyn--initial-gc-threshold gc-cons-threshold)
 (setq gc-cons-threshold 10000000)
@@ -17,10 +23,10 @@
 (setq frame-resize-pixelwise t)
 (setq default-frame-alist '((fullscreen . maximized)
 
-			    ;; Turn of all the scroll bars
-			    (vertical-scroll-bars . nil)
-			    (horizontal-scroll-bars . nil)
+                            ;; Turn off all the scroll bars
+                            (vertical-scroll-bars . nil)
+                            (horizontal-scroll-bars . nil)
 
-			    ;; Prevent the bright flashes while the theme is not loaded yet
-			    (background-color . "#000000")
-			    (foreground-color . "#ffffff")))
+                            ;; Prevent the bright flashes while the theme is not loaded yet
+                            (background-color . "#000000")
+                            (foreground-color . "#ffffff")))
