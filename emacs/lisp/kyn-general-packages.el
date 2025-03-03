@@ -5,7 +5,7 @@
   :bind (("C-x g" . magit-status)))
 
 ;; Show a popup of possible keybindings when entering a long key combo
-(use-package which-key :ensure t
+(use-package which-key :demand t
   :config (which-key-mode))
 
 (provide 'kyn-general-packages)

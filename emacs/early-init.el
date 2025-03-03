@@ -16,12 +16,21 @@
 ;; Silence useless startup message
 (setq inhibit-startup-echo-area-message 'user-login-name)
 
-;; The tool bar is cool for new users but I don't need it
+;; The tool bar and menu bar are cool for new users but I don't need them
 (tool-bar-mode -1)
+(menu-bar-mode -1)
 
-;; Every new window should be maximized and have these opinionated settings
+;; Every new window created should have these opinionated settings by default
 (setq frame-resize-pixelwise t)
 (setq default-frame-alist '((fullscreen . maximized)
+
+			    ;; No window decorations (like the titlebar)
+			    (undecorated . t)
+
+			    ;; Remove fringes but add some padding
+			    (left-fringe . 0)
+			    (right-fringe . 0)
+			    (internal-border-width . 25)
 
                             ;; Turn off all the scroll bars
                             (vertical-scroll-bars . nil)
