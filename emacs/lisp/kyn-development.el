@@ -2,17 +2,13 @@
 
 (use-package prog-mode :ensure nil
   :config
-  ;; Display line numbers in programming mode
-  (display-line-numbers-mode)
-  (setq-local display-line-numbers-width 3)
-
   ;; Use spaces over tabs
-  (setq-local indent-tabs-mode nil)
-  (setq-local tab-width 4)
-  (setq-local standard-indent 4)
+  (setq-default indent-tabs-mode nil)
+  (setq-default tab-width 4)
+  (setq-default standard-indent 4)
 
   ;; Highlight trailing spaces
-  (setq-local show-trailing-whitespace t)
+  (setq-default show-trailing-whitespace t)
 
   ;; Automatically match parenthesis
   (electric-pair-mode))
@@ -29,6 +25,12 @@
   (compilation-scroll-output 'first-error)
   (compilation-auto-jump-to-first-error t))
 
+;; Emacs Lisp
+(use-package emacs
+  :bind(:map emacs-lisp-mode-map
+              ("C-c <return>"   . pp-macroexpand-last-sexp)
+              ("C-c C-<return>" . emacs-lisp-macroexpand)))
+
 ;; Rust
 (use-package rustic-mode :ensure t
   :vc (:url "https://github.com/emacs-rustic/rustic")
@@ -37,15 +39,11 @@
               ("C-c m" . lsp-rust-analyzer-expand-macro)
               ([f5]    . rustic-cargo-build)))
 
-;; Emacs Lisp
-(use-package emacs
-  :bind (:map emacs-lisp-mode-map
-              ("C-c <return>"   . pp-macroexpand-last-sexp)
-              ("C-c C-<return>" . emacs-lisp-macroexpand)))
+;; Zig
+(use-package zig-mode :ensure t :mode "\\.zig\\'")
 
 ;; Nix
-(use-package nix-mode  :ensure t
-  :mode "\\.nix\\'")
+(use-package nix-mode  :ensure t :mode "\\.nix\\'")
 
 ;; Markdown
 (use-package markdown-mode :ensure t

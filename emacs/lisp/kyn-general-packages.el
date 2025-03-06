@@ -25,12 +25,6 @@
 (use-package which-key :ensure nil :demand t
   :config (which-key-mode))
 
-;; Open URLs with web browser
-(use-package browse-url :ensure nil
-  :custom
-  (browse-url-browser-function eww-browse-url)
-  (browse-url-secondary-browser-function browse-url-default-browser))
-
 ;; Custom HTML rendering inside Emacs
 (use-package shr :ensure nil
   :custom
