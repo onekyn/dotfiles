@@ -1,6 +1,9 @@
 ;;; -*- lexical-binding: t; -*-
 
 (use-package prog-mode :ensure nil
+  ;; Hit F5 to rebuild the project like most other IDEs
+  :bind (:map prog-mode-map ([f5] . recompile))
+
   :config
   ;; Use spaces over tabs
   (setq-default indent-tabs-mode nil)

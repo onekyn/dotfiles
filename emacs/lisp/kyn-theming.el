@@ -16,7 +16,7 @@
 ;; Use the builtin modus themes
 (use-package emacs
   :config (load-theme 'modus-vivendi)
-  :bind (("<f5>" . modus-themes-toggle))
+  :bind (([f6] . modus-themes-toggle))
   :custom
   (modus-themes-bold-constructs t)
   (modus-themes-italic-constructs t))
